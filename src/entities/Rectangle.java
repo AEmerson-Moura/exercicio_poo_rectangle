@@ -25,13 +25,20 @@ public class Rectangle {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	
+	// metodo para retornar a area do retangulo
 	public double Area() {
+		//verificando se a largura e altura sao numeros positivos
+		
+		if(getWidth() <= 0 || getHeight() <= 0) {
+			throw new IllegalArgumentException("Largura e altura devem ser números positivos");
+		}
 		return getWidth() * getHeight();
 	}
+	// metodo que retorna o perimetro
 	public double Perimeter() {
 		return 2 * (getWidth() + getHeight());
 	}
+	//metodo que retorna a diagonal 
 	public double Diagonal() {
 		return Math.sqrt((getWidth()*getWidth()) + (getHeight() * getHeight()));
 	}
